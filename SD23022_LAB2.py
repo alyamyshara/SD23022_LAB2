@@ -28,6 +28,8 @@ def mutation(individual):
             individual[i] = 1 - individual[i]
     return individual
 
+st.title("Genetic Algorithm Demo")
+
 population = [generate_individual() for _ in range(POPULATION_SIZE)]
 
 for generation in range(GENERATIONS):
@@ -45,6 +47,8 @@ for generation in range(GENERATIONS):
 
 best_individual = max(population, key=lambda x: fitness(x))
 
-print("Best Individual:", best_individual)
-print("Number of Ones:", sum(best_individual))
-print("Fitness Value:", fitness(best_individual))
+st.write("### Best Individual:")
+st.write(best_individual)
+
+st.write("### Number of Ones:", sum(best_individual))
+st.write("### Fitness Value:", fitness(best_individual))
